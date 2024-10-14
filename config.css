@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe6e6;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    position: relative;
+    text-align: center;
+  }
+  
+  .heart {
+    width: 200px;
+    height: 200px;
+    background-color: #ff4d4d;
+    position: relative;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #ff4d4d;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -100px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: 100px;
+    top: 0;
+  }
+  
+  .heart:hover {
+    transform: scale(1.1) rotate(-45deg);
+  }
+  
+  .message {
+    margin-top: 60px;
+    font-size: 24px;
+    color: #b30000;
+    display: none;
+  }
+  
+  .small-heart {
+    width: 30px;
+    height: 30px;
+    background-color: #ff6666;
+    position: absolute;
+    transform: rotate(-45deg);
+    animation: float 2s ease-out forwards;
+    opacity: 0.8;
+  }
+  
+  .small-heart::before,
+  .small-heart::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff6666;
+    border-radius: 50%;
+  }
+  
+  .small-heart::before {
+    top: -15px;
+    left: 0;
+  }
+  
+  .small-heart::after {
+    left: 15px;
+    top: 0;
+  }
+  
+  @keyframes float {
+    0% {
+      opacity: 1;
+      transform: translateY(0) rotate(-45deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-150px) rotate(-45deg);
+    }
+  }
+  
