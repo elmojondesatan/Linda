@@ -2,20 +2,24 @@ bigHeart.addEventListener('click', () => {
     // Mostrar el mensaje "Te quiero mucho"
     message.style.display = 'block';
   
-    // Generar más corazones pequeños (20 en lugar de 10)
+    // Generar más corazones pequeños (20 en total)
     for (let i = 0; i < 20; i++) {
       const smallHeart = document.createElement('div');
       smallHeart.classList.add('small-heart');
   
-      // Coloca los corazones pequeños en posiciones aleatorias alrededor del corazón grande
-      smallHeart.style.left = `${Math.random() * 100 - 50}%`;
-      smallHeart.style.top = `${Math.random() * 100 - 50}%`;
+      // Posición aleatoria en toda la pantalla alrededor del corazón grande
+      const randomX = Math.random() * window.innerWidth;  // Posición horizontal
+      const randomY = Math.random() * window.innerHeight; // Posición vertical
+  
+      smallHeart.style.left = `${randomX}px`;
+      smallHeart.style.top = `${randomY}px`;
   
       document.body.appendChild(smallHeart);
   
-      // Remueve los corazones después de 2 segundos
+      // Remover los corazones después de la animación (2 segundos)
       setTimeout(() => {
         smallHeart.remove();
-      }, 4000);
+      }, 2000);
     }
   });
+  
